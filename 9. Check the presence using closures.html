@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check the presence using closures</title>
+</head>
+<body>
+    <script>
+        const numbers = [5, 12, 18, 28, 36, 48, 72];
+
+        //number checker function
+        function numberChecker(arr, num) {
+            return function(num) {
+                return checkNum(arr, num);
+            }
+        }
+
+        function checkNum(arr, num) {
+                if(arr.includes(num)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+        //CALLING THE FUNCTION
+        const checkNumber = numberChecker(numbers);
+        console.log(checkNumber(48))    
+
+        
+    </script>
+</body>
+</html>
