@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter by Category</title>
+</head>
+<body>
+    <script>
+        //ARRAY
+        let products = [
+            {name: "Shirt", category:"Clothing"},
+            {name: "Pants", category:"Clothing"},
+            {name: "Hat", category:"Accessories"},
+            {name: "Sunglasses", category:"Accessories"},
+        ];
+
+        //FUNCTION WITH CLOSURE
+        function filterByCategory(products) {
+            return function(category) {
+                return products.filter(product => product.category === category);
+            };
+        }
+
+        const filterProductsByCategory = filterByCategory(products);
+        const filteredProducts = filterProductsByCategory("Clothing");
+        console.log(filteredProducts);
+    </script>
+</body>
+</html>
